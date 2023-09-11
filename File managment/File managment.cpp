@@ -1,7 +1,7 @@
 #include <iostream>
 #include"Owners.h"
 #include"FileManager.h"
-
+template <typename Type>
 int main()
 {
     Owners owner;
@@ -9,7 +9,7 @@ int main()
     owner.telephone = "2814336856";
     owner.user.first = "Tim";
     owner.user.second = "Copeland";
-    FileManager manage("Owners.txt");
+    FileManager<Owners>manage("Owners.txt");
     manage.create();
     manage.put(owner);
     std::vector<Owners> owners= manage.get();

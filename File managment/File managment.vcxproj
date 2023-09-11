@@ -128,13 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="File managment.cpp" />
-    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Owners.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileManager.h" />
-    <ClInclude Include="Header.h" />
     <ClInclude Include="Owners.h" />
+    <ClInclude Include="Properties.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
