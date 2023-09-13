@@ -128,10 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="File managment.cpp" />
+    <ClCompile Include="ManageOwners.cpp" />
     <ClCompile Include="Owners.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileManager.h" />
+    <ClInclude Include="ManageOwners.h" />
+    <ClInclude Include="ManageProperties.h" />
     <ClInclude Include="Owners.h" />
     <ClInclude Include="Properties.h" />
   </ItemGroup>
