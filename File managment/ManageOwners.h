@@ -1,22 +1,24 @@
 #pragma once
 #include"FileManager.h"
-class ManageOwners :public FileManager
+class ManageOwners :public FileManager<Owners>
 {
 
 public:
-	virtual void putO(Owners owner);
-	virtual std::vector<Owners> getOwners();
+	ManageOwners(std::string path);
+	virtual void put(Owners owner)const override;
+	virtual std::vector<Owners> get()const override;
 };
 
 #include"ManageOwners.h"
-inline void ManageOwners::putO(Owners owner)
+inline ManageOwners::ManageOwners(std::string path) :FileManager(path) {}
+inline void ManageOwners::put(Owners owner)const
 {
 	std::ofstream fout;
 	fout.open(path, std::ios_base::app);
 	fout << owner.user.first << '\n' << owner.user.second << '\n' << owner.telephone << '\n' << owner.age << "\n\n";
 	fout.close();
 }
-inline std::vector<Owners> ManageOwners::getOwners()
+inline std::vector<Owners> ManageOwners::get()const
 {
 	std::ifstream fin;
 	fin.open(path);

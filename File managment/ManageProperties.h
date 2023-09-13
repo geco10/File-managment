@@ -1,23 +1,26 @@
 #pragma once
 #include"FileManager.h"
-class ManageProperties:public FileManager
+class ManageProperties:public FileManager<Properties>
 {
 public:
-	virtual void putP(Properties prop);
-	virtual std::vector<Properties> getProperties();
+	ManageProperties(std::string path);
+	virtual void put(Properties obj)const override;
+	virtual std::vector<Properties> get()const override;
 
 private:
 
 };
 
-inline void ManageProperties::putP(Properties prop)
+inline ManageProperties::ManageProperties(std::string path):FileManager(path) {}
+
+inline void ManageProperties::put(Properties prop)const
 {
 	std::ofstream fout;
 	fout.open(path, std::ios_base::app);
 	fout << prop.square_meter << '\n' << prop.address << '\n' << prop.has_building << "\n\n";
 	fout.close();
 }
-inline std::vector<Properties> ManageProperties::getProperties()
+inline std::vector<Properties> ManageProperties::get()const
 {
 	std::ifstream fin;
 	fin.open(path);
