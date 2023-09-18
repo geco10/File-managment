@@ -10,7 +10,7 @@ class FileManager
 protected:
 	std::string path;
 public:
-	virtual void put(Type obj)const=0;
+	virtual void put(const Type& obj)const=0;
 	void open(std::string path);
 	FileManager(std::string path);
 	void create();
