@@ -42,16 +42,9 @@ inline std::vector<Owners> ManageOwners::get()const
 	fin.open(path);
 	std::vector<Owners> a;
 	while (!fin.eof()) {
-		Owners owner;
-		fin >> owner.user.first;
-		fin.ignore(1);
-		fin >> owner.user.second;
-		fin.ignore(1);
-		fin >> owner.telephone;
-		fin.ignore(1);
-		fin >> owner.age;
-		fin.ignore(2);
-		a.push_back(owner);
+		Owners o;
+		fin >> o;
+		a.push_back(o);
 	}
 	fin.close();
 	return a;

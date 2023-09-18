@@ -26,14 +26,10 @@ inline std::vector<Properties> ManageProperties::get()const
 	std::ifstream fin;
 	fin.open(path);
 	std::vector<Properties> a;
-	while (fin.eof()) {
+	while (!fin.eof()) {
 		Properties prop;
-		fin >> prop.square_meter;
-		fin.ignore(1);
-		fin >> prop.address;
-		fin.ignore(1);
-		fin >> prop.has_building;
-		fin.ignore(2);
+		fin >> prop;
+		a.push_back(prop);
 	}
 	fin.close();
 	return a;
