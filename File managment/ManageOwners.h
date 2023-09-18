@@ -2,7 +2,8 @@
 #include"FileManager.h"
 class ManageOwners :public FileManager<Owners>
 {
-
+	int get_last_id()const;
+	void change_id(int a)const;
 public:
 	ManageOwners(std::string path);
 	virtual void put(Owners owner)const override;
@@ -10,12 +11,29 @@ public:
 };
 
 #include"ManageOwners.h"
+inline int ManageOwners::get_last_id()const
+{
+	std::ifstream fin;
+	fin.open("Last_owner_id.txt");
+	int b;
+	fin>>b;
+	fin.close();
+	return b;
+}
+inline void ManageOwners::change_id(int a)const
+{
+	std::ofstream fout;
+	fout.open("Last_owner_id.txt");
+	fout << a;
+	fout.close();
+}
 inline ManageOwners::ManageOwners(std::string path) :FileManager(path) {}
 inline void ManageOwners::put(Owners owner)const
 {
+	int last_id = get_last_id();
 	std::ofstream fout;
 	fout.open(path, std::ios_base::app);
-	fout << owner.user.first << '\n' << owner.user.second << '\n' << owner.telephone << '\n' << owner.age << "\n\n";
+	fout << owner.user.first << '\n' << owner.user.second << '\n' << owner.telephone << '\n' << owner.age <<owner.id<< "\n\n";
 	fout.close();
 }
 inline std::vector<Owners> ManageOwners::get()const

@@ -9,5 +9,6 @@ public:
 	OwnerName user;
 	std::string telephone="";
 	int age = 0;
+	size_t id = 0;
 };
 

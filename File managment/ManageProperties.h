@@ -1,12 +1,13 @@
 #pragma once
 #include"FileManager.h"
+
 class ManageProperties:public FileManager<Properties>
 {
 public:
 	ManageProperties(std::string path);
 	virtual void put(Properties obj)const override;
 	virtual std::vector<Properties> get()const override;
-
+    std::vector<Properties> getPropertiesByOwner(size_t owner_id)const;
 private:
 
 };
@@ -37,4 +38,9 @@ inline std::vector<Properties> ManageProperties::get()const
 	fin.close();
 	return a;
 
+}
+
+inline std::vector<Properties> ManageProperties::getPropertiesByOwner(size_t last_id) const
+{
+	
 }
