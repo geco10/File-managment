@@ -12,14 +12,14 @@ public:
 };
 inline std::ostream& operator<<(std::ostream& os, const Properties& prop)
 {
-	os << prop.square_meter << '\n' << prop.address << '\n' << prop.has_building << '\n' << prop.id_owner << "\n\n";
+	os << prop.square_meter << '\n' << prop.address << '\n' << prop.has_building <<"\n"<< prop.id_owner << "\n\n";
 
 	return os;
 }
 inline std::istream& operator>>(std::istream& is, Properties& prop) {
-	is >> prop.square_meter;
-	is.ignore(1);
 	is >> prop.address;
+	is.ignore(1);
+	is >> prop.square_meter;
 	is.ignore(1);
 	is >> prop.has_building;
 	is.ignore(1);

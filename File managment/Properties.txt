@@ -1,60 +1,40 @@
-30
-1201knockknock
+123MainStreet,City,Country
+28
 1
-0
+2
 
-40
-12knockknocis
+456ElmAvenue,Town,Country
+17
 0
-0
+3
 
-30
-1201knockknock
+789OakLane,Village,Country
+22
 1
-0
-
-40
-12knockknocis
-0
-0
-
-30
-1201knockknock
 1
+
+101PinRoad,Suburb,Country
+31
+0
 0
 
-40
-12knockknocis
-0
-0
-
-30
-1201knockknock
+202CedarStreet,City,Country
+13
 1
-0
+2
 
-40
-12knockknocis
+303MapleAvenue,Town,Country
+29
 0
-0
+3
 
-30
-1201knockknock
+404BirchLane,Village,Country
+19
 1
-0
-
-40
-12knockknocis
-0
-0
-
-30
-1201knockknock
 1
-0
 
-40
-12knockknocis
+505RedwoodRoad,Suburb,Country
+26
 0
 0
 
