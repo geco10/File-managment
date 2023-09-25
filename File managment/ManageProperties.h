@@ -38,5 +38,19 @@ inline std::vector<Properties> ManageProperties::get()const
 
 inline std::vector<Properties> ManageProperties::getPropertiesByOwner(size_t last_id) const
 {
-	
+	std::vector<Properties> data;
+	std::ifstream fin;
+	fin.open(path);
+	while (!fin.eof()) {
+		Properties prop;
+		fin >> prop;
+		data.push_back(prop);
+	}
+	fin.close();
+	std::vector<Properties> arr;
+	for (int i = 0; i < data.size(); i++){
+		if (data[i].id_owner == last_id)
+			arr.push_back(data[i]);
+	}
+	return arr;
 }

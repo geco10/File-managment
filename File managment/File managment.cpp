@@ -16,6 +16,12 @@ int main()
     prop.address = "12knockknocis";
     prop.has_building = false;
     manage.put(prop);
-    for (Properties prop : manage.get())
+    Owners owner;
+    owner.age = 2;
+    owner.user.first = "coco";
+    owner.user.second = "melon";
+    owner.telephone="281knockboom";
+    ManageOwners manage("Owners.txt");
+    for (Properties prop : manage.getPropertiesByOwner(2))
         std::cout << prop;
 }
