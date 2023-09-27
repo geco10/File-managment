@@ -6,11 +6,11 @@
 
 int main()
 {
-	Owners owner;
-	owner.age = 25;
-	owner.telephone = "658299044";
-	owner.user.first = "tommda";
-	owner.user.second = "terresa";
-	ManageOwners manage("Owners.txt");
-	manage.put(owner);
+	Properties prop;
+	prop.id_owner=4;
+	prop.has_building = true;
+	prop.address = "tommda";
+	prop.square_meter =81;
+	ManageProperties manage("Properties.txt");
+	manage.put(prop);
 }

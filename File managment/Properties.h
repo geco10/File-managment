@@ -12,7 +12,7 @@ public:
 };
 inline std::ostream& operator<<(std::ostream& os, const Properties& prop)
 {
-	os << prop.square_meter << '\n' << prop.address << '\n' << prop.has_building <<"\n"<< prop.id_owner << "\n\n";
+	os << prop.address << '\n' <<prop.square_meter  << '\n' << prop.has_building <<"\n"<< prop.id_owner << "\n\n";
 
 	return os;
 }
