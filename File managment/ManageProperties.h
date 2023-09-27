@@ -16,10 +16,7 @@ inline ManageProperties::ManageProperties(std::string path):FileManager(path) {}
 
 inline void ManageProperties::put(const Properties& prop)const
 {
-	std::ofstream fout;
-	fout.open(path, std::ios_base::app);
-	fout << prop;
-	fout.close();
+	put_data(prop);
 }
 inline std::vector<Properties> ManageProperties::get()const
 {

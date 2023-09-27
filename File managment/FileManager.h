@@ -9,6 +9,7 @@ class FileManager
 {
 protected:
 	std::string path;
+	void put_data(const Type& type)const;
 public:
 	virtual void put(const Type& obj)const=0;
 	void open(std::string path);
@@ -17,6 +18,15 @@ public:
 	virtual std::vector<Type> get()const=0;
 };		
  
+
+template<typename Type>
+inline void FileManager<Type>::put_data(const Type& type)const
+{
+	std::ofstream fout;
+	fout.open(path, std::ios_base::app);
+	fout << type;
+	fout.close();
+}
 
 template<typename Type>
 inline void FileManager<Type>::open(std::string path)

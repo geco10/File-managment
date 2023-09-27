@@ -32,10 +32,9 @@ inline void ManageOwners::put(const Owners& owner)const
 	int last_id = get_last_id();
 	Owners o = owner;
 	o.id = last_id;
-	std::ofstream fout;
-	fout.open(path, std::ios_base::app);
-	fout << o;
-	fout.close();
+
+	put_data(o);
+
 	change_id(last_id+1);
 }
 inline std::vector<Owners> ManageOwners::get()const
