@@ -13,7 +13,7 @@ public:
 };
 inline std::ostream& operator<<(std::ostream& os, const Owners& owner)
 {
-	os << owner.user.first << '\n' << owner.user.second << '\n' << owner.telephone << '\n' << owner.age << '\n' << owner.id << "\n\n";
+	os <<"\n" << owner.user.first << '\n' << owner.user.second << '\n' << owner.telephone << '\n' << owner.age << '\n' << owner.id << "\n";
 	return os;
 }
 inline std::istream& operator>>(std::istream& is,  Owners& owner) {

@@ -20,16 +20,7 @@ inline void ManageProperties::put(const Properties& prop)const
 }
 inline std::vector<Properties> ManageProperties::get()const
 {
-	std::ifstream fin;
-	fin.open(path);
-	std::vector<Properties> a;
-	while (!fin.eof()) {
-		Properties prop;
-		fin >> prop;
-		a.push_back(prop);
-	}
-	fin.close();
-	return a;
+	return get_data();
 
 }
 

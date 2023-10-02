@@ -6,11 +6,9 @@
 
 int main()
 {
-	Properties prop;
-	prop.id_owner=4;
-	prop.has_building = true;
-	prop.address = "tommda";
-	prop.square_meter =81;
-	ManageProperties manage("Properties.txt");
-	manage.put(prop);
+	ManageOwners manage("Owners.txt");
+	Owners o;
+	manage.remove(1);
+	for (auto prop : manage.get())
+		std::cout << prop;
 }

@@ -10,6 +10,7 @@ class FileManager
 protected:
 	std::string path;
 	void put_data(const Type& type)const;
+	std::vector<Type> get_data()const;
 public:
 	virtual void put(const Type& obj)const=0;
 	void open(std::string path);
@@ -26,6 +27,21 @@ inline void FileManager<Type>::put_data(const Type& type)const
 	fout.open(path, std::ios_base::app);
 	fout << type;
 	fout.close();
+}
+
+template<typename Type>
+inline std::vector<Type> FileManager<Type>::get_data() const
+{
+	std::ifstream fin;
+	fin.open(path);
+	std::vector<Type> a;
+	while (!fin.eof()) {
+		Type o;
+		fin >> o;
+		a.push_back(o);
+	}
+	fin.close();
+	return a;
 }
 
 template<typename Type>
