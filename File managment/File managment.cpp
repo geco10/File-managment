@@ -7,8 +7,7 @@
 int main()
 {
 	ManageOwners manage("Owners.txt");
-	Owners o;
-	manage.remove(1);
+	manage.remove_by_id(1);
 	for (auto prop : manage.get())
 		std::cout << prop;
 }
