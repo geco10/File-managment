@@ -4,6 +4,7 @@
 #include"Owners.h"
 #include"Properties.h"
 #include<vector>
+template<typename DelegateFunctions>
 template<typename Type>
 class FileManager
 {
@@ -11,6 +12,7 @@ protected:
 	std::string path;
 	void put_data(const Type& type)const;
 	std::vector<Type> get_data()const;
+	void remove(Type &type);
 public:
 	virtual void put(const Type& obj)const=0;
 	void open(std::string path);
@@ -42,6 +44,12 @@ inline std::vector<Type> FileManager<Type>::get_data() const
 	}
 	fin.close();
 	return a;
+}
+
+template<typename Type>
+inline void FileManager<Type>::remove(Type& type)
+{
+
 }
 
 template<typename Type>
