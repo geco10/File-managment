@@ -15,6 +15,8 @@ protected:
 public:
 	template<typename DelegateFunction>
 	void remove(DelegateFunction function);
+	template<typename DelegateFunction, typename UpdateFunction>
+	void update(DelegateFunction function,UpdateFunction update);
 	virtual void put(const Type& obj)const=0;
 	void open(std::string path);
 	FileManager(std::string path);
@@ -78,6 +80,22 @@ inline void FileManager<Type>::remove(DelegateFunction function)
 	fout.open(path);
 	for (int i = 0; i < a.size(); i++) {
 		if (!function(a[i]))
+			fout << a[i];
+	}
+	fout.close();
+}
+
+template<typename Type>
+template<typename DelegateFunction,typename UpdateFunction>
+inline void FileManager<Type>::update(DelegateFunction function, UpdateFunction update)
+{
+	std::vector<Type> a = get();
+	std::ofstream fout;
+	fout.open(path);
+	for (int i = 0; i < a.size(); i++) {
+		if (function(a[i]))
+			fout << update(a[i]);
+		else
 			fout << a[i];
 	}
 	fout.close();
