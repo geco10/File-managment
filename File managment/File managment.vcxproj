@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Database.cpp" />
     <ClCompile Include="File managment.cpp" />
     <ClCompile Include="ManageOwners.cpp" />
     <ClCompile Include="Owners.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Database.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="ManageOwners.h" />
     <ClInclude Include="ManageProperties.h" />

@@ -24,6 +24,9 @@
     <ClCompile Include="ManageOwners.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Owners.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ManageProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
